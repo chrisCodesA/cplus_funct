@@ -41,6 +41,7 @@ int main()
     double tem;
     double tem1;
     double degr;
+    double rads;
     non_comp_rslt = imag(cp1) - real(cp2);  //should be 3.0 * 8.0 = 24
     non_comp_rslt2 = real(cp1) + imag(cp2); // should be 2.0 * 15.0 = 30.0
     cout << "Is rslt 24s?: " << non_comp_rslt << endl;
@@ -52,15 +53,17 @@ int main()
     cout << "Is rslt2 30.0s?: " << tem1 << endl;
     //DEGREES AND RADIANS
     degr = (180.0 / (atan(1) * 4)) * (atan(imag(comp_angl) / real(comp_angl)));
+    rads = atan(imag(comp_angl) / real(comp_angl));
     if (degr < 0)
     {
-        degr = 180 - (-1 * degr);
+        degr = 180 + degr;
+        rads = (atan(1) * 4) + rads;
     }
     cout
         << "The angle in radians at:\nx = root(3)/2, y = 1/2 is:\n"
         << "real, imag: " << real(comp_angl) << ", " << imag(comp_angl)
         << "\n"
-        << atan(imag(comp_angl) / real(comp_angl)) << " rads -- which is"
+        << rads << " rads -- which is"
         << " " << degr << " degrees\n"
         << "Done!";
     cout << endl;
