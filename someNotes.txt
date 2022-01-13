@@ -1,0 +1,23 @@
+Compiling:
+    g++ -o functPract functPract.cpp
+    ./functPract
+
+Terminal commands:
+    EOF: hold--ctrl+Z--release--+Enter;
+
+
+Header Files:
+    1) a header file will display an error if the corresponding .cpp file 
+        has not been created.
+
+Disasters:
+    chapter 10.2.2:
+        vector<int> vec // empty vector
+        fill_n(vec.begin(), 10, 0);
+        Notes: Since the vector vec has no elements (is empty) calling
+        fill_n (or similar algs that write to elements) leads
+        to an undefined behavior causing an error. 
+        FIX: use the back_inserter algo like this:
+        {
+            fill_n(back_inserter(vec), 10, 0);
+        }
